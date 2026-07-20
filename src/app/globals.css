@@ -95,6 +95,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--blue-bright); o
   content: "";
 }
 .account-actions { display: flex; justify-self: end; align-items: center; gap: 12px; }
+.admin-link { color: var(--blue); font-size: 0.63rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+.admin-link:hover { color: var(--ink); }
 .user-chip { display: flex; align-items: center; gap: 9px; text-align: right; }
 .user-chip strong {
   display: block;
