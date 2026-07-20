@@ -72,8 +72,8 @@ export default async function Home({ searchParams }: HomeProps) {
                 </span>
               </div>
               <form action="/api/auth/logout" method="post">
-                <button className="icon-button" aria-label="Sign out" title="Sign out">
-                  ↗
+                <button className="sign-out-button" type="submit">
+                  Sign out
                 </button>
               </form>
             </>
