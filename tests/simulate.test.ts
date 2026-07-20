@@ -21,9 +21,11 @@ test("simulation is deterministic across runs (same seed)", () => {
   expect(a.result.metrics).toEqual(b.result.metrics);
 });
 
-test("150-attendee simulation prints benchmark metrics", () => {
+test("150-attendee simulation reports the 1.6 rank goal without enforcing it", () => {
   const { report } = runSimulation(DEFAULT_SIM_OPTIONS);
   console.log("\n" + report + "\n");
   expect(report).toContain("avgGamesPerUser");
   expect(report).toContain("avgAssignedChoiceRank");
+  expect(report).toContain("optimization goal");
+  expect(report).toContain("not a validity requirement");
 });

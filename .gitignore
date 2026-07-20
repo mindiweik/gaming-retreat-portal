@@ -1,7 +1,25 @@
+# dependencies
 node_modules/
-.DS_Store
+
+# Next.js
+.next/
+out/
+build/
+
+# local environment (the example file is safe to commit)
 .env
-.env.local
-*.log
+.env.*
+!.env.example
+
+# Vercel
 .vercel/
+
+# test/build output
+coverage/
 dist/
+*.tsbuildinfo
+
+# misc
+.DS_Store
+*.pem
+*.log

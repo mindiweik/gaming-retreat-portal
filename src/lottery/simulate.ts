@@ -80,7 +80,7 @@ export function buildSimInput(opts: SimOptions = DEFAULT_SIM_OPTIONS): LotteryIn
   const submitterCount = Math.round(opts.users * opts.submitterFraction);
   const submitters = participantUserIds.slice(0, submitterCount);
 
-  const entries: LotteryEntry[] = submitters.map((userId, idx) => {
+  const entries: LotteryEntry[] = submitters.map((userId) => {
     const openToOtherGames = rng() < opts.openToOtherFraction;
     const avoidDuplicateSystems = rng() < opts.avoidDupFraction;
     // Random distinct ranked choices.
@@ -126,17 +126,16 @@ export function runSimulation(opts: SimOptions = DEFAULT_SIM_OPTIONS): {
     `  submitters:       ${Math.round(opts.users * opts.submitterFraction)} (${Math.round(opts.submitterFraction * 100)}%)`,
     ``,
     `  metrics:`,
-    `    avgGamesPerUser         ${m.avgGamesPerUser.toFixed(3)}   ${m.avgGamesPerUser <= 1.6 ? "✅ ≤ 1.6" : "⚠️  > 1.6"}`,
-    `    avgAssignedChoiceRank   ${m.avgAssignedChoiceRank.toFixed(3)}   ${m.avgAssignedChoiceRank <= 1.6 ? "✅ ≤ 1.6" : "⚠️  > 1.6"}`,
-    `    placementRate           ${(m.placementRate * 100).toFixed(1)}%   (guarantee: everyone ≥ 1 game)`,
+    `    avgGamesPerUser         ${m.avgGamesPerUser.toFixed(3)}`,
+    `    avgAssignedChoiceRank   ${m.avgAssignedChoiceRank.toFixed(3)}   ${m.avgAssignedChoiceRank <= 1.6 ? "✅ meets 1.6 goal" : "ℹ️  above 1.6 goal; review or rerun"}`,
+    `    placementRate           ${(m.placementRate * 100).toFixed(1)}%   (guarantee: everyone ≥ 1 game, when capacity allows)`,
     `    secondGameRate          ${(m.secondGameRate * 100).toFixed(1)}%`,
     `    unplacedCount           ${m.unplacedCount}`,
     `    belowMinGameCount       ${m.belowMinGameCount}`,
     ``,
-    `  NOTE: "1.6 benchmark" is ambiguous in the blueprint. Two candidate readings:`,
-    `    (a) avgGamesPerUser      = average # games assigned per user  (count)`,
-    `    (b) avgAssignedChoiceRank = average rank of assigned choices (quality)`,
-    `  Confirm which is the real target before treating either as a hard gate.`,
+    `  The 1.6 value is an optimization goal for average assigned choice rank,`,
+    `  not a validity requirement. Admins may review, rerun, adjust, or publish`,
+    `  a draft above the goal.`,
   ];
 
   return { result, report: lines.join("\n") };

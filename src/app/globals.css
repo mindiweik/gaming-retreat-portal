@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f0e6;
+  --foreground: #26231f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+a {
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #c9795f;
+  outline-offset: 3px;
+}
