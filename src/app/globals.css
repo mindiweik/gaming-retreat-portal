@@ -135,7 +135,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--blue-bright); o
 .eyebrow { margin: 0; color: var(--blue); font-size: 0.66rem; font-weight: 900; letter-spacing: 0.18em; text-transform: uppercase; }
 .sidebar > .eyebrow { padding-left: 6px; color: var(--muted); font-size: 0.56rem; }
 .day-list { display: grid; gap: 9px; margin-top: 16px; }
-.day-list button {
+.day-list a {
   display: grid;
   min-height: 86px;
   cursor: pointer;
@@ -144,8 +144,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--blue-bright); o
   color: var(--muted);
   place-items: center;
 }
-.day-list button:hover { border-color: var(--line); background: var(--navy); }
-.day-list button.selected {
+.day-list a:hover { border-color: var(--line); background: var(--navy); }
+.day-list a.selected {
   border-color: var(--blue);
   background: linear-gradient(145deg, rgba(124, 192, 223, 0.16), rgba(18, 29, 43, 0.9));
   box-shadow: inset 4px 0 var(--red);
@@ -228,7 +228,9 @@ h2 { margin: 7px 0 0; font-family: Impact, "Arial Black", sans-serif; font-size:
 .legend i { width: 9px; height: 9px; }
 .legend-featured { background: var(--blue); }
 .legend-attendee { background: var(--red); }
+.legend-block { border: 1px solid var(--blue); background: transparent; }
 .schedule-board { display: grid; grid-template-columns: 66px 1fr; overflow: hidden; border: 1px solid var(--line); background: rgba(18, 29, 43, 0.7); }
+.live-schedule-board { grid-template-columns: 1fr; }
 .time-rail { display: flex; flex-direction: column; justify-content: space-between; padding: 19px 10px; border-right: 1px solid var(--line); color: #718091; font-size: 0.56rem; font-weight: 800; text-align: right; }
 .game-list { display: grid; gap: 1px; background: var(--line); }
 .game-card {
@@ -255,6 +257,14 @@ h2 { margin: 7px 0 0; font-family: Impact, "Arial Black", sans-serif; font-size:
 .table-code { display: grid; height: 100%; border-left: 1px solid var(--line); place-content: center; text-align: center; }
 .table-code small { color: var(--muted); font-size: 0.53rem; letter-spacing: 0.13em; text-transform: uppercase; }
 .table-code strong { margin-top: 5px; color: var(--game-accent); font-size: 0.88rem; }
+.calendar-event-row { display: grid; grid-template-columns: 48px 86px minmax(0, 1fr); min-height: 88px; align-items: center; background: #0d1621; box-shadow: inset 4px 0 var(--blue); }
+.calendar-event-row .event-icon { color: var(--blue); text-align: center; }
+.calendar-event-row > div:last-child { padding: 14px 22px; }
+.calendar-event-row span { color: var(--blue); font-size: 0.53rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+.calendar-event-row h3 { margin: 7px 0 0; font-size: 1rem; text-transform: uppercase; }
+.schedule-empty { display: grid; min-height: 180px; place-content: center; border: 1px dashed var(--line); background: rgba(18, 29, 43, 0.5); text-align: center; }
+.schedule-empty strong { font-size: 1rem; text-transform: uppercase; }
+.schedule-empty p { margin: 8px 0 0; color: var(--muted); font-size: 0.72rem; }
 .preview-note { margin: 10px 0 0; color: #657587; font-size: 0.61rem; text-align: right; text-transform: uppercase; }
 
 @media (max-width: 900px) {
@@ -263,10 +273,10 @@ h2 { margin: 7px 0 0; font-family: Impact, "Arial Black", sans-serif; font-size:
   .dashboard { grid-template-columns: 1fr; }
   .sidebar { position: static; z-index: 10; display: block; width: 100%; height: auto; padding: 10px 16px; border-right: 0; border-bottom: 1px solid var(--line); }
   .sidebar > .eyebrow, .sidebar-status { display: none; }
-  .day-list { grid-template-columns: repeat(4, 1fr); margin: 0; }
-  .day-list button { min-height: 64px; grid-template-columns: auto auto; align-content: center; justify-content: center; gap: 4px 8px; }
-  .day-list button strong { font-size: 1.2rem; }
-  .day-list button small { grid-column: 1 / -1; }
+  .day-list { grid-template-columns: repeat(5, 1fr); margin: 0; }
+  .day-list a { min-height: 64px; grid-template-columns: auto auto; align-content: center; justify-content: center; gap: 4px 8px; }
+  .day-list a strong { font-size: 1.2rem; }
+  .day-list a small { grid-column: 1 / -1; }
   .content { padding-top: 36px; }
   .welcome-row { display: grid; align-items: start; }
   .login-panel { min-width: 0; }
@@ -287,4 +297,7 @@ h2 { margin: 7px 0 0; font-family: Impact, "Arial Black", sans-serif; font-size:
   .game-number { display: none; }
   .game-info { padding: 14px; }
   .game-tags span:first-child { display: none; }
+  .calendar-event-row { grid-template-columns: 60px minmax(0, 1fr); }
+  .calendar-event-row .event-icon { display: none; }
+  .calendar-event-row > div:last-child { padding: 14px; }
 }
