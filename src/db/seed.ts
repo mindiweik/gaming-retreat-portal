@@ -23,7 +23,12 @@ export async function seedRetreat(): Promise<void> {
     (
       await db
         .insert(retreats)
-        .values({ name: RETREAT_NAME, startDate: RETREAT_START, endDate: RETREAT_END })
+        .values({
+          name: RETREAT_NAME,
+          startDate: RETREAT_START,
+          endDate: RETREAT_END,
+          timezone: "America/Los_Angeles",
+        })
         .returning()
     )[0];
 

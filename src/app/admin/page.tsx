@@ -128,6 +128,7 @@ export default async function AdminPage() {
         <div>
           <p className="eyebrow">Next setup tasks</p>
           <h2>Build the schedule</h2>
+          <Link className="primary-button" href="/admin/schedule">Open schedule editor</Link>
         </div>
         <ul>
           <li><span>01</span> Add meals and calendar blocks</li>

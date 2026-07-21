@@ -51,7 +51,50 @@
 .admin-next li { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.76rem; }
 .admin-next li span { color: var(--red-bright); font-weight: 900; }
 
+.admin-subtitle { margin: 10px 0 0; color: var(--muted); font-size: 0.7rem; }
+.setup-unlocked, .setup-locked { padding: 6px 9px; border: 1px solid; font-size: 0.58rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.setup-unlocked { border-color: var(--blue); color: var(--blue); }
+.setup-locked { border-color: var(--red); color: var(--red-bright); }
+.admin-flash, .admin-warning { max-width: 1400px; margin: 0 auto 16px; padding: 12px 15px; font-size: 0.7rem; }
+.admin-flash { border-left: 3px solid var(--blue); background: rgba(124, 192, 223, 0.1); color: var(--blue); }
+.admin-warning { border-left: 3px solid var(--red); background: rgba(187, 35, 69, 0.12); color: #ff9bb2; }
+.schedule-editor-grid { display: grid; max-width: 1400px; margin: 0 auto 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.game-editor-row { grid-template-columns: 1fr; }
+.editor-panel h2 { margin-bottom: 22px; }
+.compact-form { display: grid; gap: 15px; }
+.compact-form label { display: grid; gap: 7px; color: var(--blue); font-size: 0.61rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.compact-form input, .compact-form textarea, .compact-form select { width: 100%; border: 1px solid var(--line); background: #090e15; padding: 11px 12px; color: var(--ink); font: inherit; letter-spacing: normal; text-transform: none; }
+.compact-form input:focus, .compact-form textarea:focus, .compact-form select:focus { border-color: var(--blue); outline: none; }
+.compact-form input:disabled, .compact-form textarea:disabled, .compact-form select:disabled, .compact-form button:disabled { cursor: not-allowed; opacity: 0.5; }
+.compact-form .checkbox-label { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+.compact-form .checkbox-label input { width: 16px; height: 16px; accent-color: var(--red); }
+.form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.seats-row { grid-template-columns: 120px 120px minmax(180px, 1fr); }
+.form-actions { display: flex; align-items: center; gap: 10px; margin-top: 5px; }
+.compact-form .primary-button { border: 0; cursor: pointer; }
+.schedule-data-grid { display: grid; max-width: 1400px; margin: 0 auto; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.data-panel { min-width: 0; }
+.data-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.data-panel-heading span { color: var(--blue); font-family: Impact, "Arial Black", sans-serif; font-size: 1.6rem; }
+.data-list { display: grid; margin-top: 18px; border-top: 1px solid var(--line); }
+.data-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.data-row > div:first-child { min-width: 0; }
+.data-row strong, .data-row small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.data-row strong { font-size: 0.76rem; }
+.data-row small { margin-top: 5px; color: var(--muted); font-size: 0.58rem; }
+.row-actions { display: flex; align-items: center; gap: 9px; }
+.row-actions > a, .row-actions summary { cursor: pointer; color: var(--blue); font-size: 0.58rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.row-actions summary { color: var(--red-bright); list-style: none; }
+.row-actions details { position: relative; }
+.row-actions details form { position: absolute; z-index: 5; right: 0; display: flex; width: 220px; gap: 5px; margin-top: 8px; padding: 8px; border: 1px solid var(--red); background: #090e15; }
+.row-actions details input { min-width: 0; width: 100%; border: 1px solid var(--line); background: var(--base); padding: 7px; color: var(--ink); font-size: 0.65rem; }
+.row-actions details button { cursor: pointer; border: 0; background: var(--red); color: white; font-size: 0.58rem; font-weight: 900; text-transform: uppercase; }
+.empty-state { margin: 16px 0 0; color: var(--muted); font-size: 0.7rem; }
+.admin-next .primary-button { margin-top: 20px; }
+
+@media (max-width: 1100px) { .schedule-data-grid { grid-template-columns: 1fr; } }
 @media (max-width: 980px) {
+  .schedule-editor-grid { grid-template-columns: 1fr; }
   .admin-grid { grid-template-columns: 1fr; }
   .admin-stats { grid-template-columns: repeat(2, 1fr); }
   .phase-track { grid-template-columns: 1fr; }
@@ -65,6 +108,7 @@
   .admin-header-actions { justify-content: space-between; }
   .admin-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
   .admin-panel { padding: 18px; }
+  .form-row, .seats-row { grid-template-columns: 1fr; }
   .phase-form > div { display: grid; }
   .danger-button { min-height: 44px; }
   .admin-day-list > div { grid-template-columns: 52px 1fr; padding: 10px 0; }

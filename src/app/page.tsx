@@ -64,6 +64,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <div className="account-actions">
           {user ? (
             <>
+              <a className="admin-link" href="/profile">Profile</a>
               {user.role === "ADMIN" ? <a className="admin-link" href="/admin">Admin</a> : null}
               <div className="user-chip">
                 <span className="online-dot" aria-hidden="true" />
