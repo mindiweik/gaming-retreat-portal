@@ -144,7 +144,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <nav className="topnav" aria-label="Primary navigation">
           <a className="is-active" href="#schedule">Schedule</a>
           <a href="#games">Games</a>
-          <a href="#lottery">Lottery</a>
+          {user ? <Link href="/lottery">Lottery</Link> : <a href="#lottery">Lottery</a>}
         </nav>
 
         <div className="account-actions">
@@ -204,7 +204,7 @@ export default async function Home({ searchParams }: HomeProps) {
                 {process.env.NODE_ENV !== "production" && process.env.DEV_AUTO_LOGIN_DISCORD_ID ? <a className="secondary-button" href="/api/auth/dev">Local dev login</a> : null}
               </div>
             ) : (
-              <a className="primary-button" href="#lottery">View lottery status <span>→</span></a>
+              <Link className="primary-button" href="/lottery">View lottery status <span>→</span></Link>
             )}
           </div>
 

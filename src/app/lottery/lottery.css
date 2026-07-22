@@ -1,0 +1,60 @@
+.lottery-shell { min-height: 100vh; padding: clamp(24px, 4vw, 60px); background: linear-gradient(rgba(124,192,223,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(124,192,223,.03) 1px, transparent 1px), radial-gradient(circle at 88% 0, rgba(35,123,176,.2), transparent 30rem), var(--base); background-size: 32px 32px, 32px 32px, auto, auto; }
+.lottery-header { display: flex; max-width: 1300px; align-items: end; justify-content: space-between; gap: 28px; margin: 0 auto 30px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.lottery-header h1 { margin-top: 8px; }
+.lottery-header p:not(.eyebrow) { max-width: 730px; margin: 15px 0 0; color: var(--muted); line-height: 1.6; }
+.lottery-day-tabs { display: grid; max-width: 1300px; margin: 0 auto 16px; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.lottery-day-tabs a { display: grid; min-height: 92px; align-content: center; gap: 5px; border: 1px solid var(--line); background: rgba(18,29,43,.92); padding: 16px 18px; color: var(--muted); }
+.lottery-day-tabs a:hover, .lottery-day-tabs a.selected { border-color: var(--blue); color: var(--ink); }
+.lottery-day-tabs a.selected { box-shadow: inset 4px 0 var(--red); background: linear-gradient(135deg, rgba(124,192,223,.14), var(--navy)); }
+.lottery-day-tabs span, .lottery-day-tabs small { font-size: .57rem; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+.lottery-day-tabs span { color: var(--blue); }
+.lottery-day-tabs strong { font-size: 1rem; text-transform: uppercase; }
+.lottery-notice, .lottery-saved { display: flex; max-width: 1300px; align-items: center; gap: 12px; margin: 0 auto 16px; padding: 13px 16px; font-size: .7rem; }
+.lottery-notice { border-left: 3px solid var(--red); background: rgba(187,35,69,.13); }
+.lottery-notice strong { color: var(--red-bright); text-transform: uppercase; }
+.lottery-notice span { color: var(--muted); }
+.lottery-saved { border-left: 3px solid var(--blue); background: rgba(124,192,223,.1); color: var(--blue); }
+.lottery-calendar, .ranking-panel { max-width: 1300px; margin: 0 auto 16px; border: 1px solid var(--line); background: rgba(18,29,43,.95); padding: clamp(18px, 3vw, 28px); }
+.lottery-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+.lottery-section-heading h2 { margin-top: 7px; }
+.lottery-section-heading > span { color: var(--muted); font-size: .62rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.lottery-timeline { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.lottery-calendar-row { display: grid; grid-template-columns: 100px minmax(0,1fr); min-height: 88px; align-items: stretch; background: var(--navy); }
+.lottery-calendar-row.game { box-shadow: inset 4px 0 var(--blue); }
+.lottery-calendar-row.block { background: #0c151f; box-shadow: inset 4px 0 var(--red); }
+.lottery-calendar-row time { display: grid; align-content: center; gap: 3px; padding: 14px 20px; border-right: 1px solid var(--line); }
+.lottery-calendar-row time strong { color: var(--blue); font-size: 1rem; }
+.lottery-calendar-row time span { color: var(--muted); font-size: .62rem; }
+.lottery-calendar-row > div { position: relative; padding: 15px 20px; }
+.lottery-calendar-row > div > span { color: var(--blue); font-size: .55rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.lottery-calendar-row.block > div > span { color: var(--red-bright); }
+.lottery-calendar-row h3 { margin: 7px 0 0; font-size: 1rem; text-transform: uppercase; }
+.lottery-calendar-row em { position: absolute; top: 50%; right: 20px; transform: translateY(-50%); border: 1px solid var(--blue); padding: 5px 8px; color: var(--blue); font-size: .58rem; font-style: normal; font-weight: 900; text-transform: uppercase; }
+.ranking-panel form fieldset { margin: 0; padding: 0; border: 0; }
+.ranking-panel form fieldset:disabled { opacity: .58; }
+.ranking-list { display: grid; gap: 10px; }
+.ranking-row { display: grid; grid-template-columns: 88px minmax(0,1fr); min-height: 150px; border: 1px solid var(--line); background: var(--navy); }
+.ranking-row > label { display: grid; align-content: center; justify-items: center; gap: 9px; border-right: 1px solid var(--line); color: var(--muted); font-size: .56rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.ranking-row select { width: 52px; height: 46px; border: 1px solid var(--blue); background: #090e15; color: var(--ink); font-size: 1rem; font-weight: 900; text-align: center; }
+.ranking-game-info { min-width: 0; padding: 18px 22px; }
+.ranking-game-info > div { display: flex; flex-wrap: wrap; gap: 7px; }
+.ranking-game-info > div span { border: 1px solid var(--line); padding: 3px 7px; color: var(--blue); font-size: .53rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.ranking-game-info h3 { margin: 10px 0 0; font-size: 1.15rem; text-transform: uppercase; }
+.ranking-game-info p { display: -webkit-box; max-width: 850px; margin: 8px 0; overflow: hidden; color: var(--muted); font-size: .72rem; line-height: 1.55; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.ranking-game-info small { color: #778a9b; font-size: .58rem; text-transform: uppercase; }
+.lottery-preferences { display: grid; margin-top: 18px; grid-template-columns: repeat(2,1fr); gap: 10px; }
+.lottery-preferences label { display: flex; align-items: start; gap: 11px; border: 1px solid var(--line); background: #0d1621; padding: 15px; }
+.lottery-preferences input { width: 17px; height: 17px; flex: 0 0 auto; accent-color: var(--red); }
+.lottery-preferences strong, .lottery-preferences small { display: block; }
+.lottery-preferences strong { font-size: .68rem; text-transform: uppercase; }
+.lottery-preferences small { margin-top: 5px; color: var(--muted); font-size: .62rem; line-height: 1.4; }
+.lottery-submit-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+.lottery-submit-row p { margin: 0; color: var(--muted); font-size: .65rem; }
+.lottery-submit-row button { cursor: pointer; }
+.lottery-empty-state { display: grid; min-height: 160px; place-content: center; text-align: center; color: var(--muted); }
+.lottery-empty-state h1 { font-size: 3rem; color: var(--ink); }
+.lottery-empty-state p { margin: 8px 0; }
+.lottery-empty-state a { color: var(--blue); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+@media (max-width: 720px) { .lottery-header { display: grid; } .lottery-day-tabs { grid-template-columns: 1fr; } .lottery-day-tabs a { min-height: 68px; } .lottery-preferences { grid-template-columns: 1fr; } .lottery-submit-row { display: grid; } .ranking-row { grid-template-columns: 68px minmax(0,1fr); } .lottery-calendar-row em { position: static; display: inline-block; margin-top: 8px; transform: none; } }
+@media (max-width: 480px) { .lottery-shell { padding: 20px 12px; } .lottery-calendar, .ranking-panel { padding: 14px; } .ranking-row { grid-template-columns: 1fr; } .ranking-row > label { grid-template-columns: auto auto; justify-content: start; padding: 12px 15px; border-right: 0; border-bottom: 1px solid var(--line); } .ranking-game-info { padding: 15px; } }
